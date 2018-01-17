@@ -1,0 +1,161 @@
+/* basic body setting
+------------------------------------*/
+html,
+body {
+    height: 100%;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+}
+
+/* navBar
+------------------------------------*/
+/*buttons*/
+#btnLogin, #btnSignin {
+    margin: 5px;
+    margin-top: 10px;
+}
+
+/*homepage
+------------------------------------*/
+#home {
+    background: url("img/homeBack.jpg") center center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+/* k name style for lg and medium devices */
+#kName {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+}
+/* icons */
+#homeIconsLeft {
+    clear: both;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 20px;
+    margin-bottom: 20px; 
+}
+#homeIconsRight {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.hoverTransform:hover {
+    -webkit-transform:scale(1.2);
+    transform:scale(1.2);
+    transition:.5s
+}
+
+
+/* section 1
+------------------------------------*/
+.feature-content {
+    padding: 110px 0;
+    overflow: hidden;
+}
+
+/* section 2 and 3
+------------------------------------*/
+/*feature dark container*/
+.feature-content img {
+    margin-bottom: -110px;
+}
+.feature-dark {
+    background: #262F36;
+    color: white;
+}
+
+.feature-dark h2 {
+    color: white;
+}
+
+/* Media Query */
+/*this will apply the styles on screens
+of size 991px and above*/
+@media screen and ( min-width : 991px) {
+
+    .feature-content {
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+
+/* footer
+------------------------------------*/
+#main-footer {
+    background: #262F36;
+    color: white;
+    padding: 30px 0;
+}
+
+#main-footer h6 {
+    color: #718FA9;
+}
+
+#main-footer a {
+    color: #6C6F73;
+}
+
+
+
+/* login page
+------------------------------------*/
+
+
+
+/* project (1,2,3,..) page
+------------------------------------*/
+#oneProject {
+    margin-bottom: -120px;
+}
+#twoProject {
+    margin-bottom: -50px;
+}
+div#all_blogs {
+    border: 2px solid grey;
+    padding: 0 10px 10px 10px;
+}
+div.blog_post h2 {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+div.blog_post p {
+    margin-top: 0;
+    text-align: left;
+}
+
+div.blog_post div.blog_content p {
+    margin-top: 0.5em;
+}
+div.blog_post h2 {
+    text-decoration: none;
+    color: black;
+}
+#commentNav {
+    margin-bottom: auto;
+}
+#commentDd {
+    list-style-type: none;
+}
+#commentLinks {
+    padding-right: 30px;
+}
+
+
+/* edit page
+------------------------------------*/
+

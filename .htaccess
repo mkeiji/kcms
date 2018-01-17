@@ -1,0 +1,17 @@
+
+RewriteEngine off
+
+# Rewrite for projects.php
+RewriteRule ^main/?$ index.html [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)?$ $1.php
+#RewriteCond %{REQUEST_FILENAME}\.html -f
+#RewriteRule ^(.*)?$ $1.html
+
+# Rewrite for projCategory.php?category=xxxxxxxx
+#RewriteRule ^pcategory/([a-zA-Z]+)?$ projCategory.php?category=$1 [NC,L]
+
+# Rewrite for projects.php?orderBy=dateCreated&projectId=1
+#RewriteRule ^project/([a-zA-Z]+)/([0-9]+)?$ projects.php?orderBy=$1&projectId=$2 [NC,L]
