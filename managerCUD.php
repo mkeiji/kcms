@@ -10,6 +10,7 @@
 session_start();
 include ('authenticate.php');
 include ('connect.php');
+include ('links.php');
 //include ('fileUD.php');
 
 
@@ -50,7 +51,7 @@ try {
         //check if submit button is CANCEL
         if (isset($_POST['cancel'])) {
             //send to previous page
-            header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage1']);
+            header('Location: ' . $baseHostAddress . $_SESSION['lastPage1']);
         }
         /*then check to see if the cancel button comes from NEWPROJECTS...
         the redirection needs to be direct to the page because the user can try to input
@@ -65,7 +66,7 @@ try {
             }
 
             //send send straight to manage projects
-            header('Location: http://keiji.pcriot.com/site/manage.php?manage=projects');
+            header('Location: ' . $baseHostAddress . 'manage.php?manage=projects');
         }
 
         /********************** CREATES ***********************/
@@ -85,7 +86,7 @@ try {
             $insert_id = $db->lastInsertId();
 
             //send user to previous page
-            header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage1']);
+            header('Location: ' . $baseHostAddress .  $_SESSION['lastPage1']);
         }  //--end of create category
 
         //for **NEW PROJECT**
@@ -116,7 +117,7 @@ try {
             unset($_SESSION['currentProjImg']);
 
             //send send straight to manage projects
-            header('Location: http://keiji.pcriot.com/site/manage.php?manage=projects');
+            header('Location: ' . $baseHostAddress . 'manage.php?manage=projects');
         }  //--end of create category
 
 
@@ -153,7 +154,7 @@ try {
 //            echo nl2br($projectImgPath . "\n");
 
             //send send straight to manage projects
-            header('Location: http://keiji.pcriot.com/site/manage.php?manage=projects');
+            header('Location: ' . $baseHostAddress . 'manage.php?manage=projects');
         }  //--end if - update user
 
 
@@ -181,7 +182,7 @@ try {
             $statement->execute();
 
             //using header function to redirect the page after the action
-            header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage1']);
+            header('Location: ' . $baseHostAddress . $_SESSION['lastPage1']);
         }  //--end if - update user
 
         //for **UPDATE CATEGORY**
@@ -198,7 +199,7 @@ try {
             $statement->execute();
 
             //using header function to redirect the page after the action
-            header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage1']);
+            header('Location: ' . $baseHostAddress . $_SESSION['lastPage1']);
         }  //--end if - update user
 
 
@@ -219,7 +220,7 @@ try {
             }
 
             //send send straight to manage projects
-            header('Location: http://keiji.pcriot.com/site/manage.php?manage=projects');
+            header('Location: ' . $baseHostAddress . 'manage.php?manage=projects');
         }  //--end if - delete project
 
         //for **DELETE USER**
@@ -232,7 +233,7 @@ try {
             $statement->execute();
 
             //using header function to redirect the page to the after the action
-            header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage1']);
+            header('Location: ' . $baseHostAddress . $_SESSION['lastPage1']);
         }  //--end if - delete user
 
         //for **DELETE CATEGORY**
@@ -245,7 +246,7 @@ try {
             $statement->execute();
 
             //using header function to redirect the page to the after the action
-            header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage1']);
+            header('Location: ' . $baseHostAddress . $_SESSION['lastPage1']);
         }  //--end if - delete category
 
     } //--end of server request check
