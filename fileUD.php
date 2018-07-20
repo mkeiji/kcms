@@ -96,7 +96,7 @@ if (isset($_POST['uploadImg']) || isset($_POST['changeImg'])) {
     }
 
         //send back to the page and load the image
-        header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage2']);
+        header('Location: ' . $baseHostAddress . $_SESSION['lastPage2']);
 
     }
 }

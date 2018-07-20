@@ -44,7 +44,7 @@ $postId     = filter_input(INPUT_POST, 'postId', FILTER_SANITIZE_NUMBER_INT);
 //first check if submit button is CANCEL
 if (isset($_POST['cancel'])) {
     //send to previous page
-    header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage1']);
+    header('Location: ' . $baseHostAddress . $_SESSION['lastPage1']);
 }
 
 /*-- FOR REGISTER --*/
@@ -72,14 +72,14 @@ if (isset($_POST['register'])) {
     //redirect to a page
     //if user is an admin, send to administrative page
     if ($_SESSION['userType'] == 'admin') {
-        header('Location: http://keiji.pcriot.com/site/manage.php?manage=users');
+        header('Location: ' . $baseHostAddress . 'manage.php?manage=users');
     }
     //else send to login page with a new session
     else {
         //set username session variable
         $_SESSION['username'] = $username;
         //send user to loginpage
-        header('Location: http://keiji.pcriot.com/site/login.html');
+        header('Location: ' . $baseHostAddress . 'login.html');
     }
 
 }  //--end if register
@@ -138,7 +138,7 @@ if ((isset($_POST['g-recaptcha-response']) && $_POST['g-recaptcha-response']) ||
                     $insert_id = $db->lastInsertId();
 
                     //send user to previous page
-                    header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage1']);
+                    header('Location: ' . $baseHostAddress . $_SESSION['lastPage1']);
                     //header('Location: http://localhost/project/' . $pageRequest);
                 }  //--end of newPost
 
@@ -162,7 +162,7 @@ if ((isset($_POST['g-recaptcha-response']) && $_POST['g-recaptcha-response']) ||
                     $statement->execute();
 
                     //using header function to redirect the page to the previous page after the insertion
-                    header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage1']);
+                    header('Location: ' . $baseHostAddress . $_SESSION['lastPage1']);
                     //header('Location: http://localhost/project/' . $pageRequest);
                 }  //--end of update
 
@@ -174,7 +174,7 @@ if ((isset($_POST['g-recaptcha-response']) && $_POST['g-recaptcha-response']) ||
                     $statement->execute();
 
                     //using header function to redirect the page to the previous page after the insertion
-                    header('Location: http://keiji.pcriot.com/site/' . $_SESSION['lastPage1']);
+                    header('Location: ' . $baseHostAddress . $_SESSION['lastPage1']);
                     //header('Location: http://localhost/project/' . $pageRequest);
                 }  //--end of delete
             }  //--end if that checks if method is post
