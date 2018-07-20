@@ -5,6 +5,7 @@
 session_start();
 include ('authenticate.php');
 include ('connect.php');
+include ('env.php');
 //require __DIR__ . '/eventviva/Image'
 //include ('eventviva/ImageResize.php');
 //use /eventviva/ImageResize;

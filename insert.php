@@ -9,6 +9,7 @@
 -----------------------------------------------*/
 session_start();
 include ('connect.php');
+include ('env.php');
 
 
 /* sanitized variables (from register.html)
