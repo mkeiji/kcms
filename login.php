@@ -3,6 +3,7 @@
 -----------------------------------------------*/
 session_start();
 include ('connect.php');
+include ('env.php');
 
 
 /* variables
@@ -46,10 +47,10 @@ if (!(($username == $users[0]['userName']) && (password_verify($password, $users
      * also: check if the user exists. if not, display error msg (maybe send
      * the user to a page to register)*/
     //send user to error page
-    header('Location: http://192.168.1.100:81/loginError.html');
+    header('Location: http://kcms.http80.info/loginError.html');
 }
 //if login is successful
 else {
     //send user to homepage
-    header('Location: http://192.168.1.100:81/home.php');
+    header('Location: http://kcms.http80.info/home.php');
 }
