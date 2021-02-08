@@ -6,9 +6,9 @@
      * from the script to the database. several other scripts are going to use this
      * script to connect to the database.
      * */
-    define('DB_DSN','mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8');
-    define('DB_USER',$dbuser);
-    define('DB_PASS',$dbpwd);
+    define('DB_DSN','mysql:host=localhost;dbname=kcms;charset=utf8');
+    define('DB_USER','root');
+    define('DB_PASS','Admin2015');
 
     //exception handling
     // Create a PDO object called $db.

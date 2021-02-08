@@ -50,7 +50,7 @@ INSERT INTO `categories` (`categoryId`, `category`) VALUES
 CREATE TABLE `posts` (
   `postId` int(255) NOT NULL,
   `dateCreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `dateModified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `dateModified` timestamp NULL,
   `projectId` int(100) NOT NULL,
   `userId` int(100) NOT NULL,
   `title` varchar(30) NOT NULL,

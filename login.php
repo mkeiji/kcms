@@ -47,10 +47,10 @@ if (!(($username == $users[0]['userName']) && (password_verify($password, $users
      * also: check if the user exists. if not, display error msg (maybe send
      * the user to a page to register)*/
     //send user to error page
-    header('Location: http://kcms.http80.info/loginError.html');
+    header('Location: http://localhost/loginError.html');
 }
 //if login is successful
 else {
     //send user to homepage
-    header('Location: http://kcms.http80.info/home.php');
+    header('Location: http://localhost/home.php');
 }
