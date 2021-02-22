@@ -9,7 +9,7 @@
 
 > ####NOTE: 
 > There is an *image* that already contains the dependencies and a populated Db. 
-> - registry.gitlab.com/keijidev/kcms
+> - ghcr.io/mkeiji/kcms:latest
 > If the image is not used, the dependencies need to be manually installed. 
 >
 > *the sql backup can be used to populate the DB*
@@ -59,9 +59,9 @@
 ## Run
 
 - Clone the repository
-- Run the image from gitlab/registry
+- Run the image from github/registry
     ```bash
-    docker run --name kcms -it -v "$PWD:/var/www/example.com/public_html" -p 80:80 registry.gitlab.com/keijidev/kcms /bin/bash
+    docker run --name kcms -it -v "$PWD:/var/www/example.com/public_html" -p 80:80 ghcr.io/mkeiji/kcms:latest /bin/bash
     ```
 - Manually start apache and mysql within the container
     ```bash
