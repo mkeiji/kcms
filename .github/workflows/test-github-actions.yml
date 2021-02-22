@@ -1,0 +1,8 @@
+name: test-github-actions
+on: [push]
+jobs:
+  run-linux-cmd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ls -l
