@@ -14,7 +14,7 @@
 >
 > *the sql backup can be used to populate the DB*
 
-## Optional Configuration
+## Optional Configuration (if using the docker image)
 
 ### Apache Configuration:
 
@@ -58,20 +58,29 @@
 
 ## Run
 
-- Clone the repository
-- Run the image from github/registry
+- Without Docker:
+    - If Apache and MySQL are correctly configured and running there are 2 options:
+        1. clone the repository inside the apache /www folder
+        2. use linux symlink:
+        ```bash
+        ln -s /path/to/origin /path/to/target
+        ```
+
+- Using Docker:
+    - Clone the repository
+    - Run the image from github/registry
     ```bash
     docker run --name kcms -it -v "$PWD:/var/www/example.com/public_html" -p 80:80 ghcr.io/mkeiji/kcms:latest /bin/bash
     ```
-- Manually start apache and mysql within the container
+    - Manually start apache and mysql within the container
     ```bash
     service apache2 start
     ```
     ```bash
     service mysql start
     ```
-- Exit the container by pressing: `ctrl + p` and `ctrl + q`
-- Navigate to `https://localhost/`
+    - Exit the container by pressing: `ctrl + p` and `ctrl + q`
+    - Navigate to `https://localhost/`
 
 > ####Note
 > The website’s root directory is /var/www/example.com/public_html/.
